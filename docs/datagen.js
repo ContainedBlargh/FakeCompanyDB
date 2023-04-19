@@ -63,7 +63,7 @@ function generateFakeStocks(company_name) {
                 color: color
             },
             name: "Stock price ($)",
-            fill: "tozeroy"
+            // fill: "tozeroy"
         }
     ];
     var layout = {
