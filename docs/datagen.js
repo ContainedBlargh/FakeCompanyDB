@@ -1,3 +1,11 @@
+function array_init(len, mapper) {
+    var out = [];
+    for (var i = 0; i < len; i++) {
+        out.push(mapper(i));
+    }
+    return out;
+}
+
 function generateFakeStocks(company_name) {
     const growth = (Math.seededRandom() * 0.7) + 0.7;
     const tendency = Math.seededRandom() > 0.5 ? 1 : -0.3;
@@ -6,7 +14,7 @@ function generateFakeStocks(company_name) {
     const startDate = new Date(new Date().getFullYear() - 1, 0, 1);
     var endDate = new Date();
     var days = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
-    var stockPrices = new Array(days).fill(0).map(function (_, i) {
+    var stockPrices = array_init(days, function (i) {
         var date = new Date(startDate.getTime() + i * 24 * 60 * 60 * 1000);
         var price = offset;
         price += wave(i, 1.0 / 50.0, (Math.seededRandom() * 50.0) + 25.0) +
