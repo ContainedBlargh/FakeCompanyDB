@@ -75,6 +75,12 @@ function generateFakeStocks(company_name) {
         }
     ];
     var layout = {
+        pad: {
+            t: 0,
+            b: 0,
+            l: 0,
+            r: 0
+        },
         xaxis: {
             range: [lastMonthStartDate, lastMonthEndDate]
         },
@@ -217,7 +223,13 @@ function displayData(company_name) {
             }
         ];
         var layout = {
-            width: 300
+            width: 300,
+            pad: {
+                t: 0,
+                b: 0,
+                l: 0,
+                r: 0
+            }
         };
 
         // Render the gauge chart
