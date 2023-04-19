@@ -1,12 +1,14 @@
 <html>
-    <head>
+
+<head>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="utilities.js"></script>
     <script src="datagen.js"></script>
     <script type="text/javascript">
-        window.onload = function() {
-            var param = decodeURIComponent(window.location.href);
-            console.log(param)
+        window.onload = function () {
+            var params = {}
+            decodeURIComponent(window.location.href).replace(/[?&]+([^=&]+)=([^&]*)/gi, function (_, key, value) { return params[key] = value; });
+            displayData(params.name);
         };
     </script>
     <style>
@@ -35,19 +37,21 @@
             }
         }
     </style>
-    </head>
-    <body>
-        <div id="stock_chart"></div>
-        <div class="gauge-chart-container">
-            <div class="gauge-chart">
-                <div id="gauge-revenue"></div>
-            </div>
-            <div class="gauge-chart">
-                <div id="gauge-gross-profit-margin"></div>
-            </div>
-            <div class="gauge-chart">
-                <div id="gauge-roi"></div>
-            </div>
+</head>
+
+<body>
+    <div id="stock_chart"></div>
+    <div class="gauge-chart-container">
+        <div class="gauge-chart">
+            <div id="gauge-revenue"></div>
         </div>
-    </body>
+        <div class="gauge-chart">
+            <div id="gauge-gross-profit-margin"></div>
+        </div>
+        <div class="gauge-chart">
+            <div id="gauge-roi"></div>
+        </div>
+    </div>
+</body>
+
 </html>

@@ -1,4 +1,4 @@
-function generateFakeStocks() {
+function generateFakeStocks(company_name) {
     const growth = (Math.seededRandom() * 0.7) + 0.7;
     const tendency = Math.seededRandom() > 0.5 ? 1 : -0.3;
     const offset = growth > 1 ? 0 : 100;
@@ -90,7 +90,7 @@ function generateFakeStocks() {
             }
         ],
         title:
-            "'%PROPERTY_0%' Share Price " +
+            company_name + " Share Price " +
             lastMonthStartDate.toLocaleDateString() +
             " - " +
             lastMonthEndDate.toLocaleDateString()
@@ -103,8 +103,7 @@ function generateFakeStocks() {
         });
     }, 100);
 }
-function generateFakeData() {
-    var company_name = "%PROPERTY_0%";
+function generateFakeData(company_name) {
     var revenue = Math.floor(Math.seededRandom() * 5000000) + 1000000;
     var gross_profit_margin = (Math.seededRandom() * (50 - 20) + 20).toFixed(2);
     var gross_profit = revenue * (gross_profit_margin / 100);
@@ -162,10 +161,9 @@ function generateFakeData() {
         }
     };
 }
-function displayData() {
-    var company_name = "'%PROPERTY_0%'";
+function displayData(company_name) {
     Math.seedRandom(stringToInt(company_name));
-    var fakeData = generateFakeData();
+    var fakeData = generateFakeData(company_name);
 
     // Get the revenue, gross profit margin, and ROI values from the HTML
     var revenueValue = fakeData.revenue;
@@ -231,5 +229,5 @@ function displayData() {
     );
     createGauge(roiValue, "ROE", "gauge-roi");
 
-    generateFakeStocks();
+    generateFakeStocks(company_name);
 }
