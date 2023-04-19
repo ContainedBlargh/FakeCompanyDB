@@ -1,0 +1,53 @@
+<html>
+    <head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="utilities.js"></script>
+    <script src="datagen.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            var param = decodeURIComponent(window.location.href);
+            console.log(param)
+        };
+    </script>
+    <style>
+        #stock_chart {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 1rem;
+        }
+
+        .gauge-chart-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 1rem;
+        }
+
+        .gauge-chart {
+            width: calc(80% / 3);
+            text-align: center;
+            margin: 0 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .gauge-chart {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+    </head>
+    <body>
+        <div id="stock_chart"></div>
+        <div class="gauge-chart-container">
+            <div class="gauge-chart">
+                <div id="gauge-revenue"></div>
+            </div>
+            <div class="gauge-chart">
+                <div id="gauge-gross-profit-margin"></div>
+            </div>
+            <div class="gauge-chart">
+                <div id="gauge-roi"></div>
+            </div>
+        </div>
+    </body>
+</html>
