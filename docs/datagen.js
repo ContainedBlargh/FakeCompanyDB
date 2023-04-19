@@ -75,6 +75,7 @@ function generateFakeStocks(company_name) {
         }
     ];
     var layout = {
+        paper_bgcolor: "rgba(0, 0, 0, 0)",
         pad: {
             t: 0,
             b: 0,
@@ -229,7 +230,8 @@ function displayData(company_name) {
                 b: 0,
                 l: 0,
                 r: 0
-            }
+            },
+            paper_bgcolor: "rgba(0, 0, 0, 0)"
         };
 
         // Render the gauge chart
