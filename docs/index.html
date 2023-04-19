@@ -8,7 +8,7 @@
         window.onload = function () {
             var params = {}
             decodeURIComponent(window.location.href).replace(/[?&]+([^=&]+)=([^&]*)/gi, function (_, key, value) { return params[key] = value; });
-            displayData(params.name);
+            displayData(!params.name ? "Example Inc." : params.name);
         };
     </script>
     <style>
