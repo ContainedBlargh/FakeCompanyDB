@@ -225,8 +225,8 @@ function generateFakeGauges(company_name, width, height) {
             }
         ];
         var layout = {
-            width,
-            height,
+            width: width,
+            height: height,
             margin: {
                 autoexpand: false,
                 b: 0,
