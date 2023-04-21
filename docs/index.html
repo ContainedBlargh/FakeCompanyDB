@@ -9,6 +9,7 @@
             var params = {}
             decodeURIComponent(window.location.href).replace(/[?&]+([^=&]+)=([^&]*)/gi, function (_, key, value) { return params[key] = value; });
             var company_name = !params.name ? "Example Inc." : params.name;
+            Math.seedRandom(stringToInt(company_name));
             var type = !params.type ? "both" : params.type;
             switch (type) {
                 case "both":

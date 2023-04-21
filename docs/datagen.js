@@ -178,7 +178,6 @@ function generateFakeData(company_name) {
 }
 
 function generateFakeGauges(company_name) {
-    Math.seedRandom(stringToInt(company_name));
     var fakeData = generateFakeData(company_name);
 
     // Get the revenue, gross profit margin, and ROI values from the HTML
