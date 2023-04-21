@@ -224,7 +224,11 @@ function generateFakeGauges(company_name) {
             }
         ];
         var layout = {
-            height: 160,
+            margin: {
+                autoexpand: false,
+                b: 0,
+                t: 0
+            },
             width: 300,
             pad: {
                 t: 0,
