@@ -7,11 +7,11 @@ function array_init(len, mapper) {
 }
 
 function generateFakeStocks(company_name) {
-    const growth = (Math.seededRandom() * 0.7) + 0.7;
-    const tendency = Math.seededRandom() > 0.5 ? 1 : -0.3;
-    const offset = growth > 1 ? 0 : 100;
+    var growth = (Math.seededRandom() * 0.7) + 0.7;
+    var tendency = Math.seededRandom() > 0.5 ? 1 : -0.3;
+    var offset = growth > 1 ? 0 : 100;
     // Generate fake stock prices for the past year
-    const startDate = new Date(new Date().getFullYear() - 1, 0, 1);
+    var startDate = new Date(new Date().getFullYear() - 1, 0, 1);
     var endDate = new Date();
     var days = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
     var stockPrices = array_init(days, function (i) {
@@ -118,6 +118,7 @@ function generateFakeStocks(company_name) {
         });
     }, 100);
 }
+
 function generateFakeData(company_name) {
     var revenue = Math.floor(Math.seededRandom() * 5000000) + 1000000;
     var gross_profit_margin = (Math.seededRandom() * (50 - 20) + 20).toFixed(2);
