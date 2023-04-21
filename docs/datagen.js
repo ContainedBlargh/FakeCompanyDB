@@ -177,7 +177,7 @@ function generateFakeData(company_name) {
     };
 }
 
-function generateFakeGauges(company_name, width=300, height=400) {
+function generateFakeGauges(company_name, width, height) {
     var fakeData = generateFakeData(company_name);
 
     // Get the revenue, gross profit margin, and ROI values from the HTML
@@ -229,13 +229,15 @@ function generateFakeGauges(company_name, width=300, height=400) {
             margin: {
                 autoexpand: false,
                 b: 0,
-                t: 0
+                t: 0,
+                l: 0,
+                r: 0
             },
             pad: {
                 t: 0,
                 b: 0,
-                l: 0,
-                r: 0
+                l: 5,
+                r: 5
             },
             paper_bgcolor: "rgba(0, 0, 0, 0)"
         };
