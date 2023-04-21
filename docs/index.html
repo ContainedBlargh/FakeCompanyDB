@@ -8,14 +8,25 @@
         window.onload = function () {
             var params = {}
             decodeURIComponent(window.location.href).replace(/[?&]+([^=&]+)=([^&]*)/gi, function (_, key, value) { return params[key] = value; });
-            displayData(!params.name ? "Example Inc." : params.name);
+            var company_name = !params.name ? "Example Inc." : params.name;
+            var type = !params.type ? "both" : params.type;
+            switch (type) {
+                case "both":
+                    generateFakeStocks(company_name);
+                    generateFakeGauges(company_name);
+                    break;
+                case "gauges":
+                    generateFakeGauges(company_name);
+                    break;
+                case "stocks":
+                    generateFakeStocks(company_name);
+            }
         };
     </script>
     <style>
         #stock_chart {
             display: flex;
             flex-wrap: wrap;
-            padding: 0.5rem;
         }
 
         .gauge-chart-container {

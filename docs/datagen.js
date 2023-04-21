@@ -176,7 +176,8 @@ function generateFakeData(company_name) {
         }
     };
 }
-function displayData(company_name) {
+
+function generateFakeGauges(company_name) {
     Math.seedRandom(stringToInt(company_name));
     var fakeData = generateFakeData(company_name);
 
@@ -250,6 +251,4 @@ function displayData(company_name) {
         "gauge-gross-profit-margin"
     );
     createGauge(roiValue, "ROE", "gauge-roi");
-
-    generateFakeStocks(company_name);
 }
