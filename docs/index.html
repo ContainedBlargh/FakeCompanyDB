@@ -11,13 +11,15 @@
             var company_name = !params.name ? "Example Inc." : params.name;
             Math.seedRandom(stringToInt(company_name));
             var type = !params.type ? "both" : params.type;
+            var width = !params.type ? 300 : parseInt(params.width);
+            var height = !params.type ? 300 : parseInt(params.height);
             switch (type) {
                 case "both":
                     generateFakeStocks(company_name);
                     generateFakeGauges(company_name);
                     break;
                 case "gauges":
-                    generateFakeGauges(company_name);
+                    generateFakeGauges(company_name, width, height);
                     break;
                 case "stocks":
                     generateFakeStocks(company_name);
